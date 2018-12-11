@@ -1,226 +1,67 @@
-p* {
-    box-sizing: border-box;
-  }
-  body{
-      background-color: black;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      z-index: -98;
-  color: white;
-  
-  }
-  
-  .main-container{
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      clear: both;
-  }
-  
-  .header{
-      width: 800px;
-      max-width: 800px;
-      height: 170px;
-      margin: 0 auto;
-      clear: both;
-      text-align: center
-      justify-content: center;
-  }
-  
-  #logo {
-      float: left;
-      position: relative;
-      width: 320px;
-      height: auto;
-      position: absolute;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%) 
-  
-  }
-  #rpg {
-      position: absolute;
-      vertical-align: top;
-      color: white;
-      font-size: 30px;
-      display: inline;
-      line-height: 165px;
-      height: 165px;
-      font-family: 'Trade Winds', cursive;
-      text-shadow: 4px 4px 7px rgba(237, 7, 7, 0.6);
-          left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%) 
-  
-  }
-  
-  .character-selection-section{
-      width: 810px;
-      height: 160px ;
-      max-width: 900px;
-      border-bottom: solid ßred 5px;
-  	  display: inline;*/
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%)
-  }
-  
-  .character {
-           
-      width: 150px;
-      height: 150px;
-  }
-  
-  .arena{
-      clear: both;
-      position: relative;
-      width: 800px;
-      max-width: 800px;
-      height: 360px;
-      margin-bottom: 10px;
-  }
-  
-  #throne-room{
-      position: absolute;
-      width: 800px;
-      height: auto;
-      border: solid red 5px;
-  }
-  
-  #player-fight-area{
-      position: absolute;
-      left:250px;
-      top: 180px;
-      width: 150px;
-      height: 150px;
-      margin: 0px;
-  }
-  
-  #opponent-fight-area{
-      position: absolute; 
-      right: 250px;
-      top: 180px;
-      width: 150px;
-      height: 150px;
-      margin: 0px;
-  }
-  
-  .flipped {
-      -moz-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      filter: FlipH;
-      -ms-filter: "FlipH";
-  }
-  
-  #player-name{
-      font-family: 'Trade Winds', cursive;
-      position: absolute;
-      left: 100px;
-      top: 10px;
-  }
-  
-  #opponent-name{
-      font-family: 'Trade Winds', cursive;
-      position: absolute;
-      right: 100px;
-      top: 10px;
-  }
-  
-  #player-hp {
-      font-family: 'Trade Winds', cursive;
-      position: absolute;
-      left: 100px;
-      top: 40px;
-  }
-  #opponent-hp {
-      font-family: 'Trade Winds', cursive;
-      position: absolute;
-      right: 100px;
-      top: 40px;
-  }
-  
-  #player-total-hp {
-      font-family: 'Trade Winds', cursive;
-      position: absolute;
-      left: 100px;
-      top: 70px;
-  
-  }
-  
-  #opponent-total-hp {
-      font-family: 'Trade Winds', cursive;
-      position: absolute;
-      right: 100px;
-      top: 70px;
-  }
-  
-  #select-text {
-      width: 800px;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
-      font-family: 'Trade Winds', cursive;
-      font-size: 20px;
-      text-shadow: 2px 2px 2px rgba(255, 255, 255, .6);
-      color: rgba(237, 7, 7, 1);
-  }
-  #attack-button{
-      position: absolute;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%); 
-  }
-  
-  #palpatine {
-      width: 600px;
-      height: auto;
-      border: solid 10px red;
-      position: absolute;
-      z-index: 99;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%); 
-      bottom: 100px;
-  }
-  
-  #game-over{
-      position: absolute;
-      text-align: center;
-      font-family: 'Trade Winds', cursive;
-      font-size: 70px;
-      text-shadow: 2px 2px 2px rgba(255, 255, 255, .6);
-      color: rgba(237, 7, 7, 1);
-      z-index: -100;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%); 
-      top: 500px;
-  }
-  #game-win{
-      position: absolute;
-      text-align: center;
-      font-family: 'Trade Winds', cursive;
-      font-size: 70px;
-      text-shadow: 2px 2px 2px rgba(255, 255, 255, .6);
-      color: rgba(237, 7, 7, 1);
-      z-index: -100;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%); 
-      top: 500px;
-  }
-  
-  #attack-button{
-      color: white;
-      background-color: red;
-      font-family: 'Trade Winds', cursive;
-  
-  }
-  #barf, #lone, #helmet, #matrix, #skroob, #yogurt {
-      position: relative;
-      width: 150px;
-      height: 150px;
-  }
+html {
+    background: url(../images/arena.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.247);
+    color: white;
+}
+.customcontainer{
+    margin-left: 10px;
+}
+
+img {
+    width: 165px;
+    height: 110px;
+}
+
+.imagebox {
+    float: left;
+    background-color: white;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.imagebox p {
+    margin: 0;
+    color: black;
+}
+
+.imagebox img {
+    margin: 4px 0px;
+}
+
+.characterSelection .imagebox{
+    border: 3px solid green;
+}
+.yourcharacter .imagebox{
+    border: 3px solid green;
+}
+.enemies .imagebox{
+    border: 3px solid black;
+    background-color: red;
+}
+.defender .imagebox{
+    border: 3px solid green;
+    background-color: black;
+}
+.defender .imagebox p{
+    color: white;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    float: none;
+    clear: both;
+}
+.footer-copyright {
+    background-color: black;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

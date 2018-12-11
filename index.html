@@ -1,57 +1,121 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>RPG Game</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Trade+Winds" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="assets/javascript/game.js"></script> 
+    <title>Spaceballs RPG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
 </head>
 
 <body>
-    <div class="main-container">
-        <header>
-            <img id="logo" src="assets/images/logo.png" alt="background">
-            <br><br>
-            <div id="rpg">Fight for Princess Vespa</div>
-        </header>
-        <br>
-        <div id="game-end-container"></div>
-        <div id="game-end-text-container"></div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-        <div class="character-selection-section">
-            <img class="character" id="barf" src="assets/images/Barf.jpg">
-            <img class="character" id="lone" src="assets/images/LoneStarr.jpg">
-            <img class="character" id="helmet" src="assets/images/helmet.png">
-            <img class="character" id="matrix" src="assets/images/DotMatrix.jpg">
-            <img class="character" id="skroob" src="assets/images/Skroob.jpg">
-            <img class="character" id="yogurt" src="assets/images/yogurt.png">
-        </div>
-        <br><br>
-        <div class="arena">
-            <img id="throne-room" src="assets/images/arena.jpg">
-                <div id="player-name"></div>
-                <div id="player-hp"></div>
-                <div id="player-total-hp"></div>
-                <div id="opponent-name"></div>
-                <div id="opponent-hp"></div>
-                <div id="opponent-total-hp"></div>
-                <div id="player-fight-area"></div>
-                <div id="opponent-fight-area"></div>
+    <div class="container customcontainer">
+        <div class="row">
+            <!--Header -->
+            <header class="col-md-12 header">
+                <h1>Spaceballs RPG</h1>
+            </header>
         </div>
 
-        <button id="attack-button">Attack</button>
+        <div class="row">
+            <!--Initial Images -->
+            <div class="col-md-12 characterSelection clearfix">
+                <div class="imagebox" id="1">
+                    <p>Barf</p>
+                    <img src="assets/images/Barf.jpg">
+                    <p id="hp">100</p>
+                </div>
+
+                <div class="imagebox" id="2">
+                    <p>Lone Starr</p>
+                    <img src="assets/images/LoneStarr.jpg">
+                    <p id="hp">120</p>
+                </div>
+
+                <div class="imagebox" id="3">
+                    <p>President Skroob</p>
+                    <img src="assets/images/Skroob.jpg">
+                    <p id="hp">120</p>
+                </div>
+                <div class="imagebox" id="4">
+                    <p>Dark Helmet</p>
+                    <img src="assets/images/helmet.png">
+                    <p id="hp">150</p>
+                </div>
+                <div class="imagebox" id="5">
+                    <p>Yogurt</p>
+                    <img src="assets/images/yogurt.png">
+                    <p id="hp">170</p>
+                </div>  
+                <div class="imagebox" id="4">
+                    <p>Dot Matrix</p>
+                    <img src="assets/images/DotMatrix.jpg">
+                    <p id="hp">150</p>
+                </div>                              
+            </div>
+        </div>
+
+        <div class="row">
+            <!--Your Character -->
+            <div class="col-md-12 yourcharacter">
+                <h2>Your Character</h2>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Enemy characters-->
+            <div class="col-md-12">
+                <h2>Enemies Available To Attack</h2>
+                <div class="enemies">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--Fight Section -->
+            <div class="col-md-12 arena">
+                <h2>Attack Section</h2>
+                <button type="button" id="attack-btn" class="btn btn-danger btn-md">Attack</button>
+            </div>
+        </div>
+        <div class="row">
+            <!--Defender -->
+            <div class="col-md-12">
+                <h2>Defender</h2>
+                <div class="defender">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!--Defender -->
+            <div class="col-md-12 attackinfo">
+                <p id="pAttacker"></p>
+                <p id="pDefender"></p>
+            </div>
+                
+            </div>
+        </div>
+
     </div>
+<!-- Footer -->
+    <footer class="page-footer font-small black">
 
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="#"> Raymond Province</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
