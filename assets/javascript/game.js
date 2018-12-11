@@ -57,6 +57,9 @@ var characters = {
     }
 
 };
+$("#restart").on("click", function(){
+    window.location.reload();
+});
 
 console.log(Object.keys(characters)[0])
 console.log(Object.keys(characters)[1])
@@ -202,7 +205,8 @@ function ScreenUpdate(attackerObj, defenderObj)
         $(".defence #hp").text(defenderObj.hp)
         $("#pAttacker").text("You've Been Defeated....GAME OVER")
         $("#pDefender").text("");
-        reset();
+        $(":reset").css("background-color", "red");
+        $(".reset").append(button);
         //Create or show button to restart
     }
     else if (attackerObj.hp > 0 && defenderObj.hp <= 0)
@@ -213,25 +217,25 @@ function ScreenUpdate(attackerObj, defenderObj)
         if ($(".enemies").children().length > 0)
         {
             $("#pDefender").empty();
-            $("#pAttacker").text("You have defeated " + defenderObj.name + ", You can choose to fight another enemie");
+            $("#pAttacker").text("You have defeated " + defenderObj.name + ", You can choose to fight another enemy");
 
         }
         else
         {
             $("#pAttacker").text("YOU WON!!!!GAME OVER!!!")
             $("#pDefender").text("");
-
+        
             //Create or show button to restart
-            reset();
+            
         }
     }
 }
 
-function reset()
-{
-    var button = $("<button>");
-    button.addClass("btn btn-primary btn-md");
-    button.text("reset")
-    $(".reset").append(button);
-}
-console.log(reset)
+// function reset()
+// {
+//     // var button = $("<button>");
+//     // button.addClass("btn btn-primary btn-md");
+//     // button.text("reset")
+//     // $(".reset").append(button);
+//     $(":reset").css("background-color", "red");
+// }
