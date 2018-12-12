@@ -57,6 +57,7 @@ var characters = {
     }
 
 };
+//restart the game with a reset button. Found a window reload feature
 $("#restart").on("click", function(){
     window.location.reload();
 });
@@ -71,9 +72,11 @@ $(".characterSelection").on("click", ".imagebox", function ()
 {
     var htmlid = $(this).attr("id");
     console.log(htmlid);
-    //use GetJSONString to pull html id and insert into the var
+    //use GetJSONString (function at line 177) to pull html id and insert into the var
     var characterobj = GetJSONString(htmlid);
+    //Use this attri to pull the  data object for character info in Characters var and load onto HTML id.
     $(this).attr("data-obj", characterobj)
+    //Move the selected character to the your character div on the html
     $(this).clone().addClass("selected").appendTo($(".yourcharacter"));
     //remove the caracters function from this row and add to next row
     $(this).remove();
@@ -111,6 +114,7 @@ $(".arena").on("click", "#attack-btn", function ()
 {
     //Get attacjer obj stored in element
     var dataobj = $(".selected").attr("data-obj");
+    //Make array callable with JSON.parse to make it easier to call in this function.
     var attackerObj = JSON.parse(dataobj);
 
     if ($(".defender").children().length > 0)
@@ -124,6 +128,7 @@ $(".arena").on("click", "#attack-btn", function ()
         {
             //Calculate defendr hp - attacker attack
             defenderObj.hp -= attackerObj.attack;
+            //check to ensure my math is working properly.
             console.log("attackbefore if hp: " + attackerObj.hp)
             console.log("defence before if hp:" + defenderObj.hp)
             if (defenderObj.hp <= 0)
@@ -136,7 +141,6 @@ $(".arena").on("click", "#attack-btn", function ()
             }
             else
             {
-                console.log("IN ELSE")
                 console.log("attack in elseif hp: " + attackerObj.hp)
                 console.log("defence in elsehp:" + defenderObj.hp)
                 //Calculate attacker hp -  defender counter attack 
@@ -147,8 +151,9 @@ $(".arena").on("click", "#attack-btn", function ()
 
             //attacker attack increases by attack power
             attackerObj.attack += attackerObj.baseattack;
-
+            //Convert a JavaScript object into a string with JSON.stringify
             var jsonstring = JSON.stringify(attackerObj);
+            //call the jsonsting and get the value of the first attribute element. 
             $(".selected").attr("data-obj", jsonstring)
 
             jsonstring = JSON.stringify(defenderObj);
@@ -162,16 +167,18 @@ $(".arena").on("click", "#attack-btn", function ()
     }
     else
     {
+        //if you select the attack button without an enemy to fight.
         $("#pAttacker").text("No enemy here.")
         $("#pDefender").text("");
     }
 
 });
-
+//create a jsonstringify to create a sting from my javascript object (characters) listed at top 
 function GetJSONString(htmlid)
 {
     for (var i = 0; i < Object.keys(characters).length; i++)
     {
+        //list the character and assign a key to the id to ender
         var key = (Object.keys(characters)[i]);
         idkey = characters[key].id;
 
@@ -183,18 +190,19 @@ function GetJSONString(htmlid)
     }
 }
 
-
+//this function should update the screen to the html
 function ScreenUpdate(attackerObj, defenderObj)
 {
     console.log("attack hp: " + attackerObj.hp)
     console.log("defence hp:" + defenderObj.hp)
     if (attackerObj.hp > 0 && defenderObj.hp > 0)
     {
-        //Display message below Deender
+        //Display the Attack and defender attack info to pAttack
         $("#pAttacker").text("You attacked " + defenderObj.name + " for " + attackerObj.attack + " damage");
+        //display the defender info to pDefender on html
         $("#pDefender").text(defenderObj.name + "Attacked you back for " + defenderObj.counterattack + " damage");
 
-        //Update HP
+        //Update Hit points
         $(".selected #hp").text(attackerObj.hp)
         $(".defence #hp").text(defenderObj.hp)
     }
@@ -211,7 +219,7 @@ function ScreenUpdate(attackerObj, defenderObj)
     }
     else if (attackerObj.hp > 0 && defenderObj.hp <= 0)
     {
-        console.log("I GOT IN TO REMOVE")
+        console.log("did it remove")
         $(".defence").remove();
 
         if ($(".enemies").children().length > 0)
@@ -224,18 +232,8 @@ function ScreenUpdate(attackerObj, defenderObj)
         {
             $("#pAttacker").text("YOU WON!!!!GAME OVER!!!")
             $("#pDefender").text("");
-        
-            //Create or show button to restart
             
         }
     }
 }
 
-// function reset()
-// {
-//     // var button = $("<button>");
-//     // button.addClass("btn btn-primary btn-md");
-//     // button.text("reset")
-//     // $(".reset").append(button);
-//     $(":reset").css("background-color", "red");
-// }
